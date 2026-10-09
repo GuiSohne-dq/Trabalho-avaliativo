@@ -34,7 +34,7 @@ export async function cardRoutes(app: FastifyInstance) {
   const createCardSchema = z.object({
     question: z.string().min(3),
     answer: z.string().min(1),
-    deckId: z.coerce.number().int().positive()
+    deckId: z.number().int().positive()
   })
 
   server.post(
